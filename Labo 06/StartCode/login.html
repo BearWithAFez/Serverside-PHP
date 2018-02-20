@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="oldie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="oldie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="oldie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+	<title>Todolist - Please log in</title>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=520" />
+	<meta http-equiv="cleartype" content="on" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+	<link rel="stylesheet" media="screen" href="css/reset.css" />
+	<link rel="stylesheet" media="screen" href="css/screen.css" />
+
+	
+	
+</head>
+<body>
+
+	<div id="siteWrapper">
+
+		<!-- header -->
+		<header>
+			<h1><a href="index.php">Todolist</a></h1>
+		</header>
+
+		<!-- content -->
+		<section>
+
+    
+			<div class="box" id="boxLogin">
+
+				<h2>Please Log In</h2>
+
+				<div class="boxInner">
+					<form action="login.php" method="post">
+						<fieldset>
+							<dl class="columns">
+								<dt class="column-26"><label for="username">Username</label></dt>
+								<dd class="column-46"><input type="text" name="username" id="username" value="" /></dd>
+								<dt class="column-26"><label for="password">Password</label></dt>
+								<dd class="column-46"><input type="password" name="password" id="password" value="" /></dd>
+								<dd class="column-16 padd-26" id="col-submit" style="padding-top: 10px;">
+									<label for="btnSubmit"><input type="submit" id="btnSubmit" name="btnSubmit" value="Log in" /></label>
+									<input type="hidden" name="moduleAction" id="moduleAction" value="login" />
+								</dd>
+							</dl>
+						</fieldset>
+					</form>
+					<p style="padding-top: 10px;">Je hebt je nog niet eerder aangemeld op deze website.</p>
+				</div>
+
+			</div>
+
+			<div class="box" id="boxError">
+				<p>One or more errors were encountered:</p>
+				<ul class="errors">
+					<li>Invalid login credentials</li>
+				</ul>
+			</div>
+
+
+		</section>
+
+		<!-- footer -->
+		<footer>
+			<p>&copy; 2017, <a href="http://www.ikdoeict.be/" title="IkDoeICT.be">IkDoeICT.be</a></p>
+		</footer>
+
+		
+	</div>
+
+</body>
+</html>

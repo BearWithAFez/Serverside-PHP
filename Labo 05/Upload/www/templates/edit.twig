@@ -1,0 +1,80 @@
+<html>
+<!--[if lt IE 7 ]><html class="oldie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="oldie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="oldie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+    <title>{{ title }}</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=520" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="stylesheet" media="screen" href="css/reset.css" />
+    <link rel="stylesheet" media="screen" href="css/screen.css" />
+
+    <script src="js/edit.js"></script>
+
+</head>
+<body>
+
+<div id="siteWrapper">
+
+    <!-- header -->
+    <header>
+        <h1><a href="index.php">Todolist</a></h1>
+    </header>
+
+    <!-- content -->
+    <section>
+
+        <div class="box" id="boxAddTodo">
+
+            <h2>Edit existing todo</h2>
+            <div class="boxInner">
+                <form action="{{ action }}" method="post">
+                    <fieldset>
+                        <dl class="clearfix columns">
+                            <dd class="column column-46"><input type="text" name="what" id="what" value="{{ what }}" /></dd>
+                            <dd class="column column-16" id="col-priority">
+                                <select name="priority" id="priority">
+                                    {% for prio in priorities %}
+                                        <option value="{{ prio }}" {% if prio == priority %}selected{% endif %}>{{ prio }}</option>;
+                                    {% endfor %}
+                                </select>
+                            </dd>
+                            <dd class="column column-16" id="col-submit">
+                                <label for="btnSubmit"><input type="submit" id="btnSubmit" name="btnSubmit" value="Edit" /></label>
+                                <input type="hidden" name="id" value="{{ id }}" />
+                                <input type="hidden" name="moduleAction" id="moduleAction" value="edit" />
+                            </dd>
+                        </dl>
+                    </fieldset>
+                </form>
+                <p class="cancel">or <a href="index.php" title="Cancel and go back">Cancel and go back</a></p>
+            </div>
+
+        </div>
+        {% if formErrors|length != 0 %}
+            <div class="box" id="boxError"><ul class="errors">
+                    {% for i in 0..formErrors|length %}
+                        <li>{{ formErrors[i] }}</li>
+                    {% endfor %}
+                </ul></div>
+        {% endif %}
+</section>
+
+<!-- footer -->
+<footer>
+    <p>&copy; 2014, <a href="http://www.ikdoeict.be/" title="IkDoeICT.be">IkDoeICT.be</a></p>
+</footer>
+
+</div>
+
+</body>
+</html>
